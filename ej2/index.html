@@ -1,0 +1,36 @@
+<!--
+2. Dado el siguiente código, 
+añadir un tercer elemento <p> al final, con el texto: 
+“Soy el nuevo” y añadirle un id.
+
+<div id="div1">
+<p id="p1">Soy el primer parrafo</p>
+<p id="p2">Soy el segundo parrafo</p>
+ </div>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p id="p1">Soy el primer parrafo</p>
+      <p id="p2">Soy el segundo parrafo</p>
+    </div>
+  </body>
+  <script>
+    let $div = document.getElementById("div1");
+
+    let $hijo1 = document.createElement("p");
+    let $hijo2 = document.createTextNode("Soy el nuevo");
+
+    $hijo1.appendChild($hijo2);
+    $div.appendChild($hijo1);
+
+    $div.children[2].setAttribute("id", "p3");
+  </script>
+</html>

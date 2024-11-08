@@ -1,0 +1,37 @@
+<!--
+1. Dado el siguiente código:
+ <div id="myDIV">
+ <p>First p element</p>
+ <p>Second p element</p>
+ </div>
+• Poner el fondo del primer <p> de color amarillo.
+• Poner el fondo del segundo <p> de color naranja.
+• Poner el color rojo a todos los elementos p
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myDIV">
+      <p>First p element</p>
+      <p>Second p element</p>
+    </div>
+  </body>
+  <script>
+    let $div = document.getElementById("myDIV");
+
+    let $p = document.getElementsByTagName("p");
+
+    for (let index = 0; index < $p.length; index++) {
+      const element = $p[index];
+      element.style.color = "red";
+    }
+
+    $div.children[0].style.backgroundColor = "yellow";
+    $div.children[1].style.backgroundColor = "orange";
+  </script>
+</html>
