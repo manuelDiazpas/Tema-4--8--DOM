@@ -1,0 +1,24 @@
+<!--
+7. Crear 3 párrafos con sus id individuales. 
+Desde JavaScript borrar el segundo de los párrafos.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="parrafo">borrame</p>
+    <p id="parrafo">borrame</p>
+    <p id="parrafo">borrame</p>
+  </body>
+  <script>
+    let $div = document.getElementsByTagName("body");
+
+    let $padreRef = $div[0];
+
+    $padreRef.removeChild($padreRef.children[1], $padreRef);
+  </script>
+</html>

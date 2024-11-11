@@ -1,0 +1,24 @@
+<!--
+6. Crear una página HTML vacía, sólo con la etiqueta body.
+Añadir un párrafo (<p>) con un texto a la página HTML
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let $div = document.getElementsByTagName("body");
+
+    let $padreRef = $div[0];
+
+    let hijo1 = document.createElement("p");
+    let hijo2 = document.createTextNode("texto");
+
+    hijo1.appendChild(hijo2);
+    $padreRef.appendChild(hijo1, $padreRef);
+  </script>
+</html>

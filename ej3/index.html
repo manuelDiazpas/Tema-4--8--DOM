@@ -1,0 +1,36 @@
+<!--
+3. Añadir otro elemento <p> con el texto: 
+  “Soy el primero ahora”, delante del primer p.
+
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p id="p1">Soy el primer parrafo</p>
+      <p id="p2">Soy el segundo parrafo</p>
+    </div>
+  </body>
+  <script>
+    let $div = document.getElementById("div1");
+
+    let $hijo1 = document.createElement("p");
+    let $hijo2 = document.createTextNode("Soy el nuevo");
+
+    $hijo1.appendChild($hijo2);
+    $div.appendChild($hijo1);
+
+    let $hijo1_ej3 = document.createElement("p");
+    let $hijo2_ej3 = document.createTextNode("Soy el primero ahora");
+
+    let $hijoRef = $div.firstChild;
+
+    $hijo1_ej3.appendChild($hijo2_ej3);
+    $div.insertBefore($hijo1_ej3, $hijoRef);
+  </script>
+</html>

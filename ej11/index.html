@@ -1,0 +1,73 @@
+<!--
+11.- Realizar los apartados siguientes creando todo el código desde JavaScript:
+
+A. Dado un array con las estaciones del año, crear una lista 
+con cada uno de los valores del array. Crear también un titulo
+en h2 ‘Estaciones del año’. (Utilizar createElement).
+
+B. Dado un array con los continentes, crear ahora la lista 
+utilizando innerHTML.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"];
+    const continentes = ["Africa", "América", "Asia", "Europa", "Oceanía"];
+
+    const $div = document.getElementsByTagName("body");
+    const padreRef = $div[0];
+
+    let crearLista = (array) => {
+      var listas = document.createElement("ul");
+
+      padreRef.appendChild(listas, padreRef);
+
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        let hijo1 = document.createElement("li");
+        let hijo2 = document.createTextNode(element);
+
+        hijo1.appendChild(hijo2);
+
+        listas.appendChild(hijo1, listas);
+      }
+    };
+
+    let crearListaInnerHTML = (array) => {
+      let hijo1 = document.createElement("ul");
+      hijo1.setAttribute("id", "continente");
+
+      padreRef.appendChild(hijo1, padreRef);
+
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        document.getElementById("continente").innerHTML +=
+          "<li>" + element + "</li>";
+      }
+    };
+
+    let hijo1 = document.createElement("h2");
+    let hijo2 = document.createTextNode("Estaciones del año:");
+
+    hijo1.appendChild(hijo2);
+
+    padreRef.appendChild(hijo1, padreRef);
+
+    crearLista(estaciones);
+
+    hijo1 = document.createElement("h2");
+    hijo2 = document.createTextNode("Continentes:");
+
+    hijo1.appendChild(hijo2);
+
+    padreRef.appendChild(hijo1, padreRef);
+
+    crearListaInnerHTML(continentes);
+  </script>
+</html>

@@ -1,0 +1,30 @@
+<!--
+4. Dado este código, eliminar el primer elemento:
+<p>Soy el primero ahora</p>
+<p id="p1">Soy el primer parrafo</p>
+<p id="p2">Soy el segundo parrafo</p>
+<p id="p3">Soy el nuevo</p> 
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p>Soy el primero ahora</p>
+      <p id="p1">Soy el primer parrafo</p>
+      <p id="p2">Soy el segundo parrafo</p>
+      <p id="p3">Soy el nuevo</p>
+    </div>
+  </body>
+  <script>
+    let $div = document.getElementById("div1");
+
+    let $hijoRef = $div.children[0];
+
+    $div.removeChild($hijoRef);
+  </script>
+</html>

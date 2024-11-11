@@ -1,0 +1,100 @@
+<!--
+14.- Crear una página HTML con una lista de 10 elementos (ejemplo lorem),
+y un botón. Al pulsarlo, preguntar al usuario con mensajes de prompt,
+un texto a introducir y una posición del 1 al 10. Colocar el texto
+en la posición indicada. 
+
+(Actualiza el texto de ese elemento, no se modifica la longitud de la lista). Si la posición no es correcta,
+
+indicadlo. 
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="ContentFormulario">
+      <button id="boton">Crear formulario</button>
+    </section>
+  </body>
+  <script>
+    const seccion = document.getElementById("ContentFormulario");
+
+    let inicio = () => {
+      document.getElementById("boton").addEventListener("click", (e) => {
+        e.preventDefault();
+        let formulario = document.createElement("form");
+        formulario.setAttribute("style", "width:300px;");
+        formulario.setAttribute("action", "https://www.google.com/?hl=es");
+        formulario.setAttribute("method", "get");
+
+        seccion.appendChild(formulario);
+
+        let nombre = document.createElement("input");
+        nombre.setAttribute("type", "text");
+        nombre.setAttribute("placeholder", "Nombre");
+        nombre.setAttribute(
+          "style",
+          "width:100%;margin: 10px 0px;padding: 5px"
+        );
+
+        document.getElementsByTagName("form")[0].appendChild(nombre);
+
+        let apellidos = document.createElement("input");
+        apellidos.setAttribute("type", "text");
+        apellidos.setAttribute("placeholder", "Apellidos");
+        apellidos.setAttribute(
+          "style",
+          "width:100%;margin: 10px 0px;padding: 5px"
+        );
+
+        document.getElementsByTagName("form")[0].appendChild(apellidos);
+
+        let email = document.createElement("input");
+        email.setAttribute("type", "text");
+        email.setAttribute("placeholder", "Email");
+        email.setAttribute("style", "width:100%;margin: 10px 0px;padding: 5px");
+
+        document.getElementsByTagName("form")[0].appendChild(email);
+
+        let asunto = document.createElement("input");
+        asunto.setAttribute("type", "text");
+        asunto.setAttribute("placeholder", "Asunto");
+        asunto.setAttribute(
+          "style",
+          "width:100%;margin: 10px 0px;padding: 5px"
+        );
+
+        document.getElementsByTagName("form")[0].appendChild(asunto);
+
+        let mensaje = document.createElement("input");
+        mensaje.setAttribute("type", "text");
+        mensaje.setAttribute("placeholder", "Mensaje");
+        mensaje.setAttribute(
+          "style",
+          "width:100%; height:200px;margin: 10px 0px;padding: 5px"
+        );
+
+        document.getElementsByTagName("form")[0].appendChild(mensaje);
+
+        let boton = document.createElement("button");
+        boton.appendChild(document.createTextNode("Enviar"));
+        boton.setAttribute("placeholder", "Asunto");
+        boton.setAttribute(
+          "style",
+          "width:100px;margin: 10px 0px; padding: 10px; background: #F05133; color:#fff; border: solid 1px #000;"
+        );
+
+        document.getElementsByTagName("form")[0].appendChild(boton);
+        boton.addEventListener("click", () => {
+          alert("xd");
+        });
+      });
+    };
+
+    window.addEventListener("DOMContentLoaded", inicio);
+  </script>
+</html>
