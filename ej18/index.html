@@ -1,0 +1,73 @@
+<!--
+18.- Sobre el ejercicio anterior, cuando pulsemos el botón,
+añadir desde javascript una columna nueva, que será un checkbox. 
+
+Cada checkbox tiene un id diferente: “checkbox1”, “checkbox2”,…
+y un name con el valor “marcar.”
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tabla HTML dibujada con JS</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Código</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTabla"></tbody>
+    </table>
+    <button id="anyadeChecks">Mete un checkBox</button>
+  </body>
+  <script>
+    const array = [
+      { Id: 0, Nombre: "El pepe", Precio: 20.5, Codigo: "00A" },
+      { Id: 1, Nombre: "La pepa", Precio: 21.5, Codigo: "00B" },
+      { Id: 2, Nombre: "El pepito", Precio: 19.0, Codigo: "00C" },
+      { Id: 3, Nombre: "Jorge", Precio: 59.9, Codigo: "PRO" },
+    ];
+    const tabla = document.getElementById("cuerpoTabla");
+
+    for (let index = 0; index < array.length; index++) {
+      const element = array[index];
+      let cuerpo = document.createElement("tr");
+      cuerpo.setAttribute("id", element.Id);
+
+      let valor = document.createElement("td");
+      valor.appendChild(document.createTextNode(element.Nombre));
+      cuerpo.appendChild(valor);
+
+      let valor2 = document.createElement("td");
+      valor2.appendChild(document.createTextNode(element.Precio));
+      cuerpo.appendChild(valor2);
+
+      let valor3 = document.createElement("td");
+      valor3.appendChild(document.createTextNode(element.Codigo));
+      cuerpo.appendChild(valor3);
+
+      tabla.appendChild(cuerpo);
+    }
+
+    function inicio() {
+      document.getElementById("anyadeChecks").addEventListener("click", (e) => {
+        e.preventDefault();
+        for (let index = 0; index < array.length; index++) {
+          const lista = document.getElementById(index);
+          let check = document.createElement("input");
+          check.setAttribute("type", "checkBox");
+          check.setAttribute("value", "marcar");
+          lista.appendChild(check);
+        }
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", inicio);
+  </script>
+</html>
